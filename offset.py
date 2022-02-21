@@ -52,19 +52,6 @@ def compare_windows2(file1, file2):
     similarity = (len(common_elements)/max(len(list1),len(list2)))*100
     print("%", similarity,"of windows are same between two files.")
     
-def compare_windows(file1, file2):
-    with open (file1,"r") as f:
-        str1 = f.read()
-    list1 = ast.literal_eval(str1)
-    with open (file2,"r") as f:
-        str2 = f.read()
-    list2 = ast.literal_eval(str2)
-    
-    set1=set(tuple(x) for x in list1)
-    common_elements = set1.intersection(set(tuple(x) for x in list2))
-    similarity = (len(common_elements)/max(len(list1),len(list2)))*100
-    print("%", similarity,"of windows are same between two files.")
-
 #generate_offset_file("invalid0")
 #generate_windows("invalid0_offset")
-compare_windows2("valid0_offset_windows.txt","invalid0_offset_windows.txt")
+compare_windows("valid0_offset_windows.txt","invalid0_offset_windows.txt")
